@@ -22,19 +22,27 @@ Or install it yourself as:
 Authentication:
 
 ```ruby
-surveymonkey = Surveymonkey::Client.new(api_key, access_token)
+client = Surveymonkey::Client.new(api_key, access_token)
 ```
 
-To retrieve all surveys:
+User details:
 
 ```ruby
-surveys = surveymonkey.surveys
+surveys = client.user
 ```
 
-To retrieve respondents:
+Survey Data:
 
 ```ruby
-respondents = surveymonkey.respondents(survey_id)
+surveys = client.surveys
+survey_details = client.survey_details(survey_id)
+```
+
+Respondent Data:
+
+```ruby
+respondents = client.respondents(survey_id)
+responses = client.responses(survey_id, respondent_ids)
 ```
 
 ## Development
